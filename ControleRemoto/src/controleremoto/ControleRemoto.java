@@ -1,4 +1,4 @@
-package encapsulamento;
+package controleremoto;
 
 public class ControleRemoto implements Controlador {
 	

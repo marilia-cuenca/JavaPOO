@@ -1,4 +1,4 @@
-package encapsulamento;
+package controleremoto;
 
 public interface Controlador {
 	public abstract void ligar();

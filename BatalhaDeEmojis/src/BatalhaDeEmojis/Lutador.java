@@ -1,4 +1,4 @@
-package BatalhaDeEmojis;
+package batalhadeemojis;
 
 public class Lutador {
 	
@@ -21,6 +21,7 @@ public class Lutador {
 		System.out.println("Diretamente de " + this.getNacionalidade());
 		System.out.println("com " + this.getIdade() + " anos e " + this.getAltura() + " m de altura");
 		System.out.println("Pesando " + this.getPeso() + " kg");
+		System.out.println("E faz parte da categoria " + this.getCategoria());
 		System.out.println("Ganhou " + this.getVitorias() + " lutas");
 		System.out.println("Perdeu " + this.getDerrotas() + " lutas");
 		System.out.println("Empatou " + this.getEmpates() + " lutas");
@@ -48,7 +49,7 @@ public class Lutador {
 
 	
 	// Métodos construtores
-	public Lutador(String nome, String nacionalidade, int idade, float altura, float peso, int vitorias, int derrotas,
+	public Lutador(String nome, String nacionalidade, int idade, float altura, float peso, String categoria, int vitorias, int derrotas,
 			int empates) {
 		super();
 		this.nome = nome;
@@ -56,6 +57,7 @@ public class Lutador {
 		this.idade = idade;
 		this.altura = altura;
 		this.peso = peso;
+		this.categoria = categoria;
 		this.vitorias = vitorias;
 		this.derrotas = derrotas;
 		this.empates = empates;
@@ -66,7 +68,6 @@ public class Lutador {
 	public String getNome() {
 		return nome;
 	}
-
 
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -102,15 +103,14 @@ public class Lutador {
 
 	public void setPeso(float peso) {
 		this.peso = peso;
-		this.setCategoria();
+		this.setCategoria(categoria);
 	}
 
 	public String getCategoria() {
 		return categoria;
 	}
 
-	private void setCategoria() {
-		this.categoria = categoria;
+	public void setCategoria(String categoria) {
 		
 		if (this.peso < 52.2) {
 			this.categoria = "Inválido";
